@@ -26,10 +26,14 @@ public class Recv {
                                            AMQP.BasicProperties properties, byte[] body)
                         throws IOException {
                     String message = new String(body, "UTF-8");
-                    System.out.println(" [x] Received '" + message + "'");
+                    System.out.println(" [x] Received '" + message + "', " + properties);
                 }
             };
-            channel.basicConsume(QUEUE_NAME, true, consumer);
+
+            boolean autoAck = true;
+            String consumerTag = channel.basicConsume(QUEUE_NAME, autoAck, consumer);
+
+            System.out.println("Consumer tag is " + consumerTag);
 
             System.in.read();
         }

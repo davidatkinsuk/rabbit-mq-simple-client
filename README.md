@@ -15,3 +15,9 @@ See https://hub.docker.com/_/rabbitmq/ for more info
 Can look at management page on
 
       http://localhost:8080
+
+
+## Useful Documentation
+
+https://www.rabbitmq.com/tutorials/amqp-concepts.html - Exchanges and Queues explained
+https://www.rabbitmq.com/api-guide.html - Java Client API Guide
