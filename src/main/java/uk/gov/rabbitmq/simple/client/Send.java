@@ -17,7 +17,8 @@ public class Send {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
 
-        try (Connection connection = factory.newConnection(); Channel channel = connection.createChannel()) {
+        try (Connection connection = factory.newConnection();
+             Channel channel = connection.createChannel()) {
 
             // will create the queue if it doesn't exist
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
